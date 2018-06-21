@@ -11,4 +11,20 @@
     <servlet-name>HelloWorldServicePort</servlet-name>
     <url-pattern>/HelloWorldServicePort</url-pattern>
   </servlet-mapping>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>all</web-resource-name>
+      <url-pattern>/</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>users</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>jazn.com</realm-name>
+  </login-config>
+  <security-role>
+    <role-name>users</role-name>
+  </security-role>
 </web-app>
